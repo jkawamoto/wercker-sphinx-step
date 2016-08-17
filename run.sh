@@ -12,5 +12,4 @@ if [ -e "requirements.txt" ]; then
 fi
 
 echo "Compiling the document."
-echo "make $WERCKER_SPHINX_TARGET $WERCKER_SPHINX_OPTIONS"
 make $WERCKER_SPHINX_TARGET $WERCKER_SPHINX_OPTIONS
