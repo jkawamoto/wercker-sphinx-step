@@ -1,6 +1,6 @@
 # /bin/bash
 if [ -n "$WERCKER_SPHINX_BASEDIR" ]; then
-  WERCKER_SPHINX_OPTIONS = $WERCKER_SPHINX_OPTIONS" --directory "${WERCKER_SPHINX_BASEDIR}
+  WERCKER_SPHINX_OPTIONS=$WERCKER_SPHINX_OPTIONS" --directory "${WERCKER_SPHINX_BASEDIR}
 fi
 
 echo "Installing Sphinx and other packages."
