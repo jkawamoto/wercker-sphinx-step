@@ -2,11 +2,16 @@
 echo "Installing Sphinx and other packages."
 pip install --upgrade sphinx $WERCKER_SPHINX_PACKAGES
 
-if [ -n "$WERCKER_SPHINX_BASEDIR" ] then
+if [ -e "requirements.txt" ]; then
+  echo "Installing required packages."
+  pip install -r requirements.txt
+fi
 
+if [ -n "$WERCKER_SPHINX_BASEDIR" ]; then
   WERCKER_SPHINX_OPTIONS = $WERCKER_SPHINX_OPTIONS" --directory "$WERCKER_SPHINX_BASEDIR
-
 fi
 
 echo "Compiling the document."
 make $WERCKER_SPHINX_TARGET $WERCKER_SPHINX_OPTIONS
+
+# if it has requiremtnts.txt, install them.
