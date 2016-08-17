@@ -1,6 +1,6 @@
 # /bin/bash
 if [ -n "$WERCKER_SPHINX_BASEDIR" ]; then
-  WERCKER_SPHINX_OPTIONS = $WERCKER_SPHINX_OPTIONS" --directory "$WERCKER_SPHINX_BASEDIR
+  WERCKER_SPHINX_OPTIONS = $WERCKER_SPHINX_OPTIONS" --directory "${WERCKER_SPHINX_BASEDIR}
 fi
 
 echo "Installing Sphinx and other packages."
@@ -12,6 +12,5 @@ if [ -e "requirements.txt" ]; then
 fi
 
 echo "Compiling the document."
+echo "make $WERCKER_SPHINX_TARGET $WERCKER_SPHINX_OPTIONS"
 make $WERCKER_SPHINX_TARGET $WERCKER_SPHINX_OPTIONS
-
-# if it has requiremtnts.txt, install them.
